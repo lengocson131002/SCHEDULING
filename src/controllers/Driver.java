@@ -11,7 +11,7 @@ public class Driver {
 	public static final int TOURNAMENT_SELECTION_SIZE = 3;
 	public static final int NUM_OF_ELITE_SCHEDULES = 1;
 	public static final int NUMBER_OF_SLOT_PER_WEEK = 3;
-	private Data data;
+	public Data data;
 	private static int scheduleNumb = 0;
 	public static void main(String[] args) {
 		Driver driver = new Driver();
@@ -68,7 +68,7 @@ public class Driver {
 		classes.forEach(x -> {
 			System.out.format(String.format("   %02d   ", x.getId()) + "|");
 			System.out.format("%20s", x.getCl().getName() + "|");
-			System.out.format("%-70s|", x.getCourse().getName() + ", " + x.getCourse().getNumber() + ", "
+			System.out.format("%-70s|", x.getCourse().getName() + ", " + x.getCourse().getID() + ", "
 					+ x.getCourse().getMaxNumOfStudents() );
 			System.out.format("%20s", x.getRoom().getNumber() + ", " + x.getRoom().getSeatingCapacity() + "|");
 			System.out.format("%20s", x.getInstructor() + ", " + x.getInstructor().getId() + "|");
@@ -86,7 +86,7 @@ public class Driver {
 		});
 		System.out.println("\nAvailable Courses ==> ");
 		data.getCourses().forEach(course -> {
-			System.out.println("course #" + course.getNumber() + ", name:  " + course.getName() + ", max # of student: "
+			System.out.println("course #" + course.getID() + ", name:  " + course.getName() + ", max # of student: "
 					+ course.getMaxNumOfStudents() + ", instructors: " + course.getInstructors());
 		});
 		System.out.println("\nAvailable Rooms ==> ");

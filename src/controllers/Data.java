@@ -20,20 +20,20 @@ public class Data {
 	
 	public Data() {initialize();};
 	private Data initialize() {
-		Room room1 = new Room("001", 35);
-		Room room2 = new Room("002", 25);
+		Room room1 = new Room("001", 45);
+		Room room2 = new Room("002", 45);
 		Room room3 = new Room("003", 45);
 		Room room4 = new Room("004", 45);
-		Room room5 = new Room("005", 35);
-		Room room6 = new Room("100", 30);
-		Room room7 = new Room("101", 30);
-		Room room8 = new Room("102", 25);
-		Room room9 = new Room("103", 25);
+		Room room5 = new Room("005", 45);
+		Room room6 = new Room("100", 40);
+		Room room7 = new Room("101", 40);
+		Room room8 = new Room("102", 45);
+		Room room9 = new Room("103", 45);
 		Room room10 = new Room("104", 45);
-		Room room11 = new Room("105", 35);
-		Room room12 = new Room("201", 35);
+		Room room11 = new Room("105", 45);
+		Room room12 = new Room("201", 45);
 		Room room13 = new Room("202", 45);
-		Room room14 = new Room("203", 35);
+		Room room14 = new Room("203", 45);
 		Room room15 = new Room("204", 45);
 		Room room16 = new Room("205", 45);
 		Room room17 = new Room("206", 45);
@@ -78,8 +78,8 @@ public class Data {
 		meetingTimes.add(new MeetingTime(6, Slots.SLOT_6));
 	
 		Instructor instructor1 = new Instructor("I1", "HungLD", 0, 30);
-		Instructor instructor2 = new Instructor("I2", "PhuongLHK", 0, 30);
-		Instructor instructor3 = new Instructor("I3", "HoangNT", 10, 30);
+		Instructor instructor2 = new Instructor("I2", "PhuongLHK", 5, 30);
+		Instructor instructor3 = new Instructor("I3", "HoangNT", 5, 30);
 		Instructor instructor4 = new Instructor("I4", "VanVTT",  0, 30);
 		Instructor instructor5 = new Instructor("I5", "BinhNN", 0, 30);
 		Instructor instructor6 = new Instructor("I6", "AnNDH", 0, 30);
@@ -112,7 +112,8 @@ public class Data {
 		Class class4 = new Class("SE1410", new ArrayList<>(Arrays.asList(course1, course8)));
 		Class class5 = new Class("SE1411", new ArrayList<>(Arrays.asList(course1, course8)));
 		Class class6 = new Class("SE1507", new ArrayList<>(Arrays.asList(course3, course5, course6, course7)));
-		classes = new ArrayList<>(Arrays.asList(class1,class2, class3, class4,class5));
+		
+		classes = new ArrayList<>(Arrays.asList(class1,class2, class3, class4, class5, class6));
 		classes.forEach(x -> numberOfClass += x.getCourses().size());
 		
 		return this;

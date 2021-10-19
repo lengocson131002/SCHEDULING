@@ -63,7 +63,6 @@ public class Schedule {
 	}
 
 	private double calculateFitness() {
-		System.out.println("------------------------CONFLICTS CONTENT-----------------------------------------------");
 		numOfConflicts = 0;
 		int[] numOfSlotsPerInstructor = new int[data.getInstructors().size()];
 
@@ -72,22 +71,22 @@ public class Schedule {
 
 			if (x.getRoom().getSeatingCapacity() < x.getCourse().getMaxNumOfStudents()) {
 				numOfConflicts++;
-				System.out.println("Conflict in capacity: " + numOfConflicts);
+//				System.out.println("Conflict in capacity: " + numOfConflicts);
 			}
 
 			slots.stream().filter(y -> slots.indexOf(y) >= slots.indexOf(x)).forEach(y -> {
 				if (x.getMeetingTime() == y.getMeetingTime() && x.getId() != y.getId()) {
 					if (x.getCl() == y.getCl()) {
 						numOfConflicts++;
-						System.out.println("Conflict in class: " + numOfConflicts);
+//						System.out.println("Conflict in class: " + numOfConflicts);
 					}
 					if (x.getRoom() == y.getRoom()) {
 						numOfConflicts++;
-						System.out.println("Conflict in room : " + numOfConflicts);
+//						System.out.println("Conflict in room : " + numOfConflicts);
 					}
 					if (x.getInstructor() == y.getInstructor()) {
 						numOfConflicts++;
-						System.out.println("Conflict in instructor: " + numOfConflicts);
+//						System.out.println("Conflict in instructor: " + numOfConflicts);
 					}
 				}
 			});
@@ -95,7 +94,7 @@ public class Schedule {
 			slots.stream().filter(y -> slots.indexOf(y) >= slots.indexOf(x) && y.getCl() == x.getCl()).forEach(y -> {
 				if (y.getCourse() == x.getCourse() && y.getInstructor() != x.getInstructor()) {
 					numOfConflicts++;
-					System.out.println("Conflict in number of slot per instructor: " + numOfConflicts);
+//					System.out.println("Conflict in number of slot per instructor: " + numOfConflicts);
 				}
 			});
 		});
@@ -106,7 +105,6 @@ public class Schedule {
 				numOfConflicts++;
 			}
 		}
-		System.out.println("-----------------------------------------------------------------------");
 		return 1.0 / (numOfConflicts + 1);
 	}
 

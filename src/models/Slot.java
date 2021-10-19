@@ -74,7 +74,7 @@ public class Slot {
 
 	@Override
 	public String toString() {
-		return "["+ cl.getName() + ", " + course.getNumber() + ", " +room.getNumber() + ", " + instructor.getId() 
+		return "["+ cl.getName() + ", " + course.getID() + ", " +room.getNumber() + ", " + instructor.getId() 
 				+ ", " + meetingTime.getOrder() + "-" + meetingTime.getSlotOrder() + "]"; 
 	}
 

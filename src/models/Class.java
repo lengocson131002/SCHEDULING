@@ -23,5 +23,13 @@ public class Class {
 	public void setCourses(ArrayList<Course> courses) {
 		this.courses = courses;
 	}
+	public boolean hasCourse(String ID) {
+		for(int i= 0; i < this.courses.size(); i++) {
+			if(courses.get(i).getID().equalsIgnoreCase(ID)) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 }

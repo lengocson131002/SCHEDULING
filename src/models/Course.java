@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 
 public class Course {
-	private String number = null;
+	private String ID = null;
 	private String name = null;
 	private int maxNumOfStudents;
 	private ArrayList<Instructor> instructors;
@@ -12,20 +12,20 @@ public class Course {
 		super();
 	}
 
-	public Course(String number, String name, int maxNumOfStudents, ArrayList<Instructor> instructors) {
+	public Course(String ID, String name, int maxNumOfStudents, ArrayList<Instructor> instructors) {
 		super();
-		this.number = number;
+		this.ID = ID;
 		this.name = name;
 		this.maxNumOfStudents = maxNumOfStudents;
 		this.instructors = instructors;
 	}
 
-	public String getNumber() {
-		return number;
+	public String getID() {
+		return ID;
 	}
 
-	public void setNumber(String number) {
-		this.number = number;
+	public void getID(String ID) {
+		this.ID = ID;
 	}
 
 	public String getName() {
@@ -52,9 +52,17 @@ public class Course {
 		this.instructors = instructors;
 	}
 	
+	public boolean hasInstructor(String instructorID) {
+		for(int i = 0 ; i < this.instructors.size(); i++) {
+			if(this.instructors.get(i).getId().equalsIgnoreCase(instructorID)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	@Override
 	public String toString() {
 		return this.name;
 	}
-
 }
